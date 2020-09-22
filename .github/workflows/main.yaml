@@ -7,6 +7,10 @@ env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   # WEB3_INFURA_PROJECT_ID:
 
+  # increasing available memory for node reduces issues with ganache crashing
+  # https://nodejs.org/api/cli.html#cli_max_old_space_size_size_in_megabytes
+  NODE_OPTIONS: --max_old_space_size=4096
+
 jobs:
 
   tests:
@@ -27,7 +31,7 @@ jobs:
       uses: actions/setup-node@v1
 
     - name: Install Ganache
-      run: npm install -g ganache-cli@6.10.1
+      run: npm install -g ganache-cli@6.10.2
 
     - name: Setup Python 3.8
       uses: actions/setup-python@v2
