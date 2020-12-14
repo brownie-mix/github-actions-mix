@@ -32,7 +32,7 @@ To create a new virtual environment and install the required dependencie:
 ```bash
 python3 -m venv venv
 source venv/bin/activate
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
 In future sessions, activate the virtual environment with:
